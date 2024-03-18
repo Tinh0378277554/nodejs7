@@ -12,4 +12,6 @@ class NewsController {
     }
 }
 
+// tui muốn thay đổi cái này đăng lên github
+
 module.exports = new NewsController();
