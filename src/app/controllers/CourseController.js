@@ -11,6 +11,24 @@ class CourseController {
             })
             .catch(next)
     }
+
+     // [GET] /course/create
+     create(req, res, next) {
+        res.render('./courses/create');
+    }
+
+     // [POST] /course/store
+     store(req, res, next) {
+        const { name, description, image, videoId } = req.body;
+
+        const course = new Course({name, description, image, videoId})
+        course.save()
+            .then(() => res.redirect('/'))
+            .catch(err => {
+
+            })
+        
+    }
 } 
 
 module.exports = new CourseController();
